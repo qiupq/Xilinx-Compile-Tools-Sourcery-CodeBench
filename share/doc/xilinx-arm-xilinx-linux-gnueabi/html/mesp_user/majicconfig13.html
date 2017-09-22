@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <noscript>
+       <link rel="StyleSheet" href="../MGC/styles/body.css" type="text/css" />
+       <link rel="StyleSheet" href="../MGC/styles/catalog.css" type="text/css" />
+       <link rel="StyleSheet" href="../MGC/styles/document.css" type="text/css" />
+    </noscript>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v3.1.104" />
+    <meta name="LASTUPDATED" content="Mon Oct 31 12:42:40 2011" />
+    <meta name="mgc_html_doctitle" content="Mentor Embedded Sourcery Probe User's Manual" />
+    <title>Special Probe Initialization</title>
+<!-- Search Engine keywords -->
+    <meta name="attributes" content=" product.version.2.2.3,doc.type.documentation.user,product.id.P11526 "/>
+<!-- JavaScript Files -->
+<script type="text/javascript" language="JavaScript1.2" src="../MGC/js/page.js"></script>
+<script type="text/javascript" language="JavaScript1.2">
+        if(DetectChromeForBasic()){
+           writeNoScriptStyles();
+        }
+
+     </script>
+   <script type="text/javascript" language="JavaScript1.2">
+     // Set reference to top level help frame
+      //
+      if(!DetectChromeForBasic()){
+        javascriptTopicRedirect();
+      }
+     </script>
+  </head>
+
+<body class="body" id="DocBody">
+<div id="BodyPopup" class="BodyPopup"></div>
+<div class="HideBody" id="HideBody">&nbsp;</div>
+<div id="bodycontent" class="BodyContent">
+
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+  <!--
+      var BC = new Array("Sourcery Probe Configuration ","majicconfig01","Special Probe Initialization","majicconfig13","MEP_JTAG_INIT0 and MEP_JTAG_INIT1","majicconfig13","18");
+  // -->
+  </script>
+
+   <noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../MGC/html/noscript_header.htm" width="100%" height="100px;"></iframe>
+   </noscript>
+
+<script type="text/javascript" language="JavaScript1.2">
+if(DetectChromeForBasic()){
+       if(!(top.inEclipse)){  
+          writeBasicHeader();
+      }
+}
+</script>
+<div id="BodyContent">
+
+<a name="wp11263"></a><h1 class="pHeading2 FontLevel1" id="MGC11263">
+
+<a name="CRefID49615"></a>
+Special Probe Initialization
+</h1>
+<a name="wp17383"></a><h2 class="pHeading3NoSplit FontLevel2" id="MGC17383">
+
+
+MEP_JTAG_DIMENSION 
+</h2>
+<a name="wp17386"></a><p class="pBody">
+
+In most cases the probe can automatically determine the JTAG configuration. It does this with a quick test when the JTAG interface is first initialized. In some cases, it might be necessary to declare the JTAG connection details by writing a JTAG descriptor to the MEP_JTAG_DIMENSION buffer. The format of the JTAG descriptor consists of the number of TAPs in the chain, followed by a sequence of numbers to specify how many TAPIR bits are in each TAP. When a descriptor is declared in this way, the probe disables the automatic detection process and uses the specified descriptor to manage the scan chain.
+</p>
+
+<a name="wp17388"></a><p class="pL1Body">
+CntTAPs, CntIR1, CntIR2, ..., CntIRn</p>
+<a name="wp28213"></a><p class="pBody">
+
+<span class=" cBold">Example:</span>
+</p>
+
+<a name="wp28214"></a><pre class="pCode">
+ew MEP_JTAG_DIMENSION = 2, 5, 7    // There are 2 TAPs, one has 5 IR bits, 
+one has 7
+</pre>
+
+<a name="wp17391"></a><h2 class="pHeading3NoSplit FontLevel2" id="MGC17391">
+
+
+MEP_JTAG_INIT0 and MEP_JTAG_INIT1
+</h2>
+<a name="wp17394"></a><p class="pBody">
+
+The MEP_JTAG_INITx descriptors can be used to define special JTAG initialization operations required by certain devices. The INIT0 descriptor, if defined, is scanned through right after the JTAG reset cycle completes, but before the standard JTAG initialization performed by Sourcery Probe. The second, if defined, is scanned through right after the standard JTAG initialization performed by the Sourcery Probe.
+</p>
+
+<a name="wp17396"></a><p class="pBody">
+
+On most boards these can both be omitted. The Sourcery Probe initialization script template includes comments showing where these are typically used in the initialization process for those boards that require something special.
+</p>
+
+<a name="wp17398"></a><p class="pBody">
+
+When used, the format is a list of 0-N <span class=" cItalic">Scan Operation</span> frames:
+</p>
+
+<a name="wp17400"></a><pre class="pCodeIndent">
+ew MEP_JTAG_INIT0 = &lt;scan-op&gt; [ , &lt;scan-op&gt; ]  ...
+</pre>
+
+<a name="wp17401"></a><pre class="pCodeIndent">
+ew MEP_JTAG_INIT1 = &lt;scan-op&gt; [ , &lt;scan-op&gt; ]  ...
+</pre>
+
+<a name="wp17402"></a><pre class="pCodeIndent">
+ew MEP_JTAG_INIT0 = 0    // disable INIT0 descriptor
+</pre>
+
+<a name="wp17403"></a><pre class="pCodeIndent">
+ew MEP_JTAG_INIT1 = 0    // disable INIT1 descriptor
+</pre>
+
+<a name="wp17506"></a><pre class="pCodeIndent">
+
+</pre>
+
+<a name="wp17405"></a><p class="pBody">
+
+Each <span class=" cItalic">scan-op</span> frame is a free-form data buffer in the following format:
+</p>
+
+<a name="wp17407"></a><pre class="pCodeIndent">
+FF0SNCNT [ , SCANDATA ] [ , SCANDATA... ]
+</pre>
+
+<a name="wp18199"></a><pre class="pCodeIndent">
+
+</pre>
+
+<a name="wp17409"></a><p class="pBody">
+
+FF0SNCNT is a 32-bit word in big endian format, with eight flag bits in the MS bits and 20 bit scan count in the LS bits.
+</p>
+<div id="TableDivQz"></div>
+<div align="center">
+
+
+<table border="1" cellpadding="5" cellspacing="0" id="wp17534table17526">
+  <tr bgcolor="#CCCCCC"  align="center" valign="middle">
+    <th>
+
+<a name="wp17534"></a><p class="pTableHeading">
+Field
+</p>
+</th>
+
+    <th>
+
+<a name="wp17536"></a><p class="pTableHeading">
+
+Bit(s)
+</p>
+
+</th>
+
+    <th>
+
+<a name="wp17538"></a><p class="pTableHeading">
+
+Description
+</p>
+
+</th>
+
+
+</tr>
+
+  <tr align="left" valign="top">
+    <td>
+
+
+<a name="wp17540"></a><p class="pTableCell">
+<span class=" cBold">IR/DR</span></p></td>
+
+    <td>
+
+
+<a name="wp17542"></a><p class="pTableCell">
+<span class=" cBold">0x80000000</span></p></td>
+
+    <td>
+
+
+<a name="wp17544"></a><p class="pTableCell">
+<span class=" cBold">IR if the MSB is a 1, DR if 0</span></p></td>
+
+
+</tr>
+
+  <tr align="left" valign="top">
+    <td>
+
+
+<a name="wp17546"></a><p class="pTableCell">
+<span class=" cBold">P/U</span></p></td>
+
+    <td>
+
+
+<a name="wp17548"></a><p class="pTableCell">
+<span class=" cBold">0x08000000</span></p></td>
+
+    <td>
+
+
+<a name="wp17550"></a><p class="pTableCell">
+<span class=" cBold">End in PAUSE if 1, end in Update/Idle if 0</span></p></td>
+
+
+</tr>
+
+  <tr align="left" valign="top">
+    <td>
+
+
+<a name="wp17552"></a><p class="pTableCell">
+IN</p></td>
+
+    <td>
+
+
+<a name="wp17554"></a><p class="pTableCell">
+0x01000000</p></td>
+
+    <td>
+
+
+<a name="wp17556"></a><p class="pTableCell">
+Scan IN to TDI, ignore TDO</p></td>
+
+
+</tr>
+
+  <tr align="left" valign="top">
+    <td>
+
+
+<a name="wp27192"></a><p class="pTableCell">
+bitnt</p></td>
+
+    <td>
+
+
+<a name="wp27194"></a><p class="pTableCell">
+0x000nnnnn</p></td>
+
+    <td>
+
+
+<a name="wp27196"></a><p class="pTableCell">
+Scan bit count</p></td>
+
+
+</tr>
+
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+
+</p>
+
+<a name="wp17434"></a><p class="pBody">
+
+SCANDATA is defined as an array of 32-bit words, where the LSB of the first word is shifted into TDI and out of TDO, then higher order bits from that word, then LSB of the next word, and so on. If the final word has less than 32 bits, those final bits are in the LS bit positions of the final word. The number of words of SCANDATA depends on the bit specified in the FF0SNCNT control word.
+</p>
+
+
+
+
+
+</div>
+<!--BeginFooterContent-->
+<div class="BlankFooter" id="BlankFooter">&nbsp;</div>
+<div class="Footer" id="Footer">&nbsp;</div>
+<script type="text/javascript" language="JavaScript1.2">
+<!--
+   DocHandle = "mesp_user";
+   DocTitle = "Mentor Embedded Sourcery Probe User's Manual";
+   PageTitle = "Special Probe Initialization";
+   Copyright = "2011";
+   PDFLinkTitle = "Special.Probe.Initialization"
+   ThisTopic = "RegisterDefinitionFileFormat";
+   CurrentFile = "majicconfig13.html";
+   CurrentFileID = "18";
+   topicFooter();
+ // -->
+ </script>
+ 
+ <noscript>
+    <p class="MGCFooter">Mentor Embedded Sourcery Probe User's Manual&nbsp;2.2.3
+    <br />2011&#169;&nbsp;Mentor Graphics Corporation. All rights reserved.
+    <br /><a href='../mgc_html_help/nsmgchelp.htm' target="_blank">Browser Requirements</a></p>
+ </noscript>
+
+    </div>
+  </body>
+</html>
+
+ 

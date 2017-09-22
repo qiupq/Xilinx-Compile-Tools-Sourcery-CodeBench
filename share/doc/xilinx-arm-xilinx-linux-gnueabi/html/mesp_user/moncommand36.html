@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <noscript>
+       <link rel="StyleSheet" href="../MGC/styles/body.css" type="text/css" />
+       <link rel="StyleSheet" href="../MGC/styles/catalog.css" type="text/css" />
+       <link rel="StyleSheet" href="../MGC/styles/document.css" type="text/css" />
+    </noscript>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v3.1.104" />
+    <meta name="LASTUPDATED" content="Mon Oct 31 12:43:32 2011" />
+    <meta name="mgc_html_doctitle" content="Mentor Embedded Sourcery Probe User's Manual" />
+    <title>mmu_dump</title>
+<!-- Search Engine keywords -->
+    <meta name="attributes" content=" product.version.2.2.3,doc.type.documentation.user,product.id.P11526 "/>
+<!-- JavaScript Files -->
+<script type="text/javascript" language="JavaScript1.2" src="../MGC/js/page.js"></script>
+<script type="text/javascript" language="JavaScript1.2">
+        if(DetectChromeForBasic()){
+           writeNoScriptStyles();
+        }
+
+     </script>
+   <script type="text/javascript" language="JavaScript1.2">
+     // Set reference to top level help frame
+      //
+      if(!DetectChromeForBasic()){
+        javascriptTopicRedirect();
+      }
+     </script>
+  </head>
+
+<body class="body" id="DocBody">
+<div id="BodyPopup" class="BodyPopup"></div>
+<div class="HideBody" id="HideBody">&nbsp;</div>
+<div id="bodycontent" class="BodyContent">
+
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+  <!--
+      var BC = new Array("MON Command Language ","moncommand01","MON Command Details","moncommand04","mmu_dump","moncommand36","56");
+  // -->
+  </script>
+
+   <noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../MGC/html/noscript_header.htm" width="100%" height="100px;"></iframe>
+   </noscript>
+
+<script type="text/javascript" language="JavaScript1.2">
+if(DetectChromeForBasic()){
+       if(!(top.inEclipse)){  
+          writeBasicHeader();
+      }
+}
+</script>
+<div id="BodyContent">
+
+<a name="wp27241"></a><h1 class="pzCmdFunc FontLevel1" id="MGC27241">
+
+<a name="CRefID37053"></a>mmu_dump
+</h1>
+
+
+
+<a name="wp29173"></a><p class="pzMiscInfo">
+
+Availability: ALL
+</p>
+
+<table class="notes">
+  <tr class="NotesUpperRuleBlack">
+    <td class="NotesUpperRule" colspan='2'><span class="cNotesBlack">Note</span></td>
+  </tr>
+  <tr class="NotesNote">
+    <td class="NoteNote"></td>
+    <td valign="top">
+            
+<a name="wp28791"></a><p class="pnoteNote">
+
+        	This is implemented as a script file. It is not a built-in MON command. See <a href="moncommand64.html"  onclick='oT("CRF","moncommand64.html");return false;'>Command Script Files</a>.
+        </p>
+          </td>
+  </tr>
+  <tr class="NotesBottomRuleBlack">
+    <td class="NotesBottomRule" colspan='2'>&nbsp;</td>
+    </tr>
+ </table>
+<a name="wp28539"></a><p class="pzHeading">
+
+Syntax
+</p>
+
+<a name="wp28540"></a><p class="pzUsage">
+
+mmu_dump <span class=" cItalic">x y</span>    /* ARM */
+</p>
+
+<a name="wp28541"></a><p class="pzUsage">
+
+mmu_dump        /* MIPS */
+</p>
+
+<a name="wp28547"></a><p class="pzHeading">
+
+Description
+</p>
+
+<a name="wp28537"></a><p class="pzBody">
+
+The mmu_dump script displays a table of virtual addresses and their corresponding physical addresses and access properties.  For ARM processors, the table reflects the memory resident MMU map to which the TBASE register points. There are a number of sorting options available in the ARM version of the script. For MIPS processors, the table reflects the mappings programmed in the TLBs plus the hard-mapped kernel segments, and is always sorted in virtual address order.
+</p>
+
+
+<a name="wp28769"></a><p class="pzBody">
+
+The following is a description of each parameter that is used to control the display of the memory translation table:
+</p>
+
+
+<a name="wp28770"></a>
+<ul><li class="LL1BulSolid"><span class=" cItalic">x</span> is a number from 0 - 3 that controls what to display (0 is assumed if no parameter is given):</li></ul>
+
+<a name="wp29024"></a><pre class="pCodeIndent">
+0    // Dumps mixed table
+</pre>
+
+<a name="wp29025"></a><pre class="pCodeIndent">
+1    // Dumps mixed and mapped tables
+</pre>
+
+<a name="wp29026"></a><pre class="pCodeIndent">
+2    // Dumps mixed and not-mapped tables
+</pre>
+
+<a name="wp29019"></a><pre class="pCodeIndent">
+3    // Dumps mixed, mapped, and not-mapped tables
+</pre>
+
+<a name="wp29036"></a><pre class="pCodeIndent">
+
+</pre>
+
+<a name="wp28776"></a>
+<ul><li class="LL1BulSolid"><span class=" cItalic">y</span> displays a legend for the information in the table entries. The value of this parameter is not important. Its presence enables display of help information, while omitting it trims those lines from the output.</li></ul>
+
+<a name="wp28563"></a><p class="pzHeading">
+
+Example
+</p>
+
+<a name="wp28628"></a><p class="pBody">
+
+<span class=" cBold">For ARM:</span>
+</p>
+
+<a name="wp28575"></a><pre class="pCode">
+     Virtual          Physical       L1-D L2-D DM DA AP CB TEX NG S APX XN 
+XPA
+</pre>
+
+<a name="wp28576"></a><pre class="pCode">
+00000000-00ffffff 03000000-03ffffff  SUPR ---- 0  3  0  0   0  0  0  0  0  
+00
+</pre>
+
+<a name="wp28577"></a><pre class="pCode">
+01000000-011fffff  ------ - ------   INV  ---- 0  3  0  0   -  0  0  0  0  
+--
+</pre>
+
+<a name="wp28578"></a><pre class="pCode">
+01200000-0120ffff 01270000-0127ffff  CRSE LRGE 5  1  0  0   0  0  0  0  0  
+--
+</pre>
+
+<a name="wp28579"></a><pre class="pCode">
+01210000-0121ffff 01260000-0126ffff  CRSE LRGE 5  1  1  1   1  0  0  0  0  
+--
+</pre>
+
+<a name="wp28580"></a><pre class="pCode">
+01220000-0122ffff 01250000-0125ffff  CRSE LRGE 5  1  2  2   2  0  0  0  0  
+--
+</pre>
+
+<a name="wp28581"></a><pre class="pCode">
+01230000-0123ffff 01240000-0124ffff  CRSE LRGE 5  1  3  0   3  0  0  1  0  
+--
+</pre>
+
+<a name="wp28582"></a><pre class="pCode">
+01240000-0124ffff 01230000-0123ffff  CRSE LRGE 5  1  0  0   4  0  1  0  0  
+--
+</pre>
+
+<a name="wp28583"></a><pre class="pCode">
+01250000-0125ffff 01220000-0122ffff  CRSE LRGE 5  1  1  0   5  1  0  0  0  
+--
+</pre>
+
+<a name="wp28584"></a><pre class="pCode">
+01260000-0126ffff 01210000-0121ffff  CRSE LRGE 5  1  2  0   6  0  0  0  1  
+--
+</pre>
+
+<a name="wp28585"></a><pre class="pCode">
+01270000-0127ffff 01200000-0120ffff  CRSE LRGE 5  1  3  0   7  0  0  0  0  
+--
+</pre>
+
+<a name="wp28586"></a><pre class="pCode">
+01280000-012fffff  ------ - ------   INV  ---- 0  3  0  0   -  0  0  0  0  
+--
+</pre>
+
+<a name="wp28587"></a><pre class="pCode">
+01300000-01300fff 01307000-01307fff  CRSE XSML A  1  0  0   0  0  0  0  0  
+--
+</pre>
+
+<a name="wp28588"></a><pre class="pCode">
+01301000-01301fff 01306000-01306fff  CRSE XSML A  1  1  0   1  0  0  0  1  
+--
+</pre>
+
+<a name="wp28589"></a><pre class="pCode">
+01302000-01302fff 01305000-01305fff  CRSE XSML A  1  2  1   2  0  0  0  0  
+--
+</pre>
+
+<a name="wp28590"></a><pre class="pCode">
+01303000-01303fff 01304000-01304fff  CRSE XSML A  1  3  2   3  0  0  0  0  
+--
+</pre>
+
+<a name="wp28591"></a><pre class="pCode">
+01304000-01304fff 01303000-01303fff  CRSE XSML A  1  0  0   4  0  0  1  0  
+--
+</pre>
+
+<a name="wp28592"></a><pre class="pCode">
+01305000-01305fff 01302000-01302fff  CRSE XSML A  1  1  0   5  0  1  0  0  
+--
+</pre>
+
+<a name="wp28593"></a><pre class="pCode">
+01306000-01306fff 01301000-01301fff  CRSE XSML A  1  2  0   6  1  0  0  0  
+--
+</pre>
+
+<a name="wp28594"></a><pre class="pCode">
+01307000-01307fff 01300000-01300fff  CRSE XSML A  1  3  0   7  0  0  0  1  
+--
+</pre>
+
+<a name="wp28595"></a><pre class="pCode">
+01308000-7fffffff  ------ - ------   INV  ---- 0  3  0  0   -  0  0  0  0  
+--
+</pre>
+
+<a name="wp28596"></a><pre class="pCode">
+80000000-800fffff 02000000-020fffff  SECT ---- 0  3  0  0   0  0  0  0  0  
+--
+</pre>
+
+<a name="wp28597"></a><pre class="pCode">
+80100000-801fffff 02100000-021fffff  SECT ---- 1  2  1  1   1  0  0  0  0  
+--
+</pre>
+
+<a name="wp28598"></a><pre class="pCode">
+80200000-802fffff 02200000-022fffff  SECT ---- 2  1  2  2   2  0  0  0  0  
+--
+</pre>
+
+<a name="wp28599"></a><pre class="pCode">
+80300000-803fffff 02300000-023fffff  SECT ---- 3  0  3  0   3  0  0  0  1  
+--
+</pre>
+
+<a name="wp28600"></a><pre class="pCode">
+80400000-804fffff 02400000-024fffff  SECT ---- 4  0  0  0   4  0  0  1  0  
+--
+</pre>
+
+<a name="wp28601"></a><pre class="pCode">
+80500000-805fffff 02500000-025fffff  SECT ---- 5  1  1  0   5  0  1  0  0  
+--
+</pre>
+
+<a name="wp28602"></a><pre class="pCode">
+80600000-806fffff 02600000-026fffff  SECT ---- 6  2  2  0   6  1  0  0  0  
+--
+</pre>
+
+<a name="wp28603"></a><pre class="pCode">
+80700000-808fffff 02700000-028fffff  SECT ---- 7  3  3  0   7  0  0  0  0  
+--
+</pre>
+
+<a name="wp28604"></a><pre class="pCode">
+80900000-809fffff 02900000-029fffff  SECT ---- 9  2  1  1   1  0  0  0  0  
+--
+</pre>
+
+<a name="wp28605"></a><pre class="pCode">
+80a00000-80afffff 02a00000-02afffff  SECT ---- A  1  2  2   2  0  0  0  0  
+--
+</pre>
+
+<a name="wp28606"></a><pre class="pCode">
+80b00000-80bfffff 02b00000-02bfffff  SECT ---- B  0  3  0   3  0  0  0  1  
+--
+</pre>
+
+<a name="wp28607"></a><pre class="pCode">
+80c00000-80cfffff 02c00000-02cfffff  SECT ---- C  0  0  0   4  0  0  1  0  
+--
+</pre>
+
+<a name="wp28608"></a><pre class="pCode">
+80d00000-80dfffff 02d00000-02dfffff  SECT ---- D  1  1  0   5  0  1  0  0  
+--
+</pre>
+
+<a name="wp28609"></a><pre class="pCode">
+80e00000-80ffffff 02e00000-02ffffff  SECT ---- E  2  2  0   6  1  0  0  0  
+--
+</pre>
+
+<a name="wp28610"></a><pre class="pCode">
+81000000-ffffffff  ------ - ------   INV  ---- 0  3  0  0   -  0  0  0  0  
+--
+</pre>
+
+<a name="wp28611"></a><pre class="pCode">
+
+</pre>
+
+<a name="wp28612"></a><pre class="pCode">
+MMU Enable             : 1
+</pre>
+
+<a name="wp28613"></a><pre class="pCode">
+ROM Protection         : 0
+</pre>
+
+<a name="wp28614"></a><pre class="pCode">
+System Protection      : 0
+</pre>
+
+<a name="wp28615"></a><pre class="pCode">
+PID Register           : 00000000
+</pre>
+
+<a name="wp28616"></a><pre class="pCode">
+Translation Base Addr0 : 00010000
+</pre>
+
+<a name="wp28617"></a><pre class="pCode">
+Translation Base Addr1 : 00014000
+</pre>
+
+<a name="wp28618"></a><pre class="pCode">
+Translation Control    : 00000001
+</pre>
+
+<a name="wp28619"></a><pre class="pCode">
+Domain Access Register : e41be41b
+</pre>
+
+<a name="wp28620"></a><pre class="pCode">
+Entries - Mapped       : 31
+</pre>
+
+<a name="wp28621"></a><pre class="pCode">
+Entries - Not Mapped   : 4
+</pre>
+
+<a name="wp28564"></a><pre class="pCode">
+Entries - Both         : 35
+</pre>
+
+<a name="wp28632"></a><pre class="pCode">
+
+</pre>
+
+<a name="wp28633"></a><p class="pBody">
+
+<span class=" cBold">For MIPS:</span>
+</p>
+
+<a name="wp28644"></a><pre class="pCode">
+ TLB      Virtual      ASID      Physical        V D C
+</pre>
+
+<a name="wp28645"></a><pre class="pCode">
+  4e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28646"></a><pre class="pCode">
+  4o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28647"></a><pre class="pCode">
+  5e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28648"></a><pre class="pCode">
+  5o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28649"></a><pre class="pCode">
+  6e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28650"></a><pre class="pCode">
+  6o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28651"></a><pre class="pCode">
+  7e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28652"></a><pre class="pCode">
+  7o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28653"></a><pre class="pCode">
+  8e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28654"></a><pre class="pCode">
+  8o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28655"></a><pre class="pCode">
+  9e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28656"></a><pre class="pCode">
+  9o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28657"></a><pre class="pCode">
+ 10e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28658"></a><pre class="pCode">
+ 10o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28659"></a><pre class="pCode">
+ 11e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28660"></a><pre class="pCode">
+ 11o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28661"></a><pre class="pCode">
+ 12e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28662"></a><pre class="pCode">
+ 12o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28663"></a><pre class="pCode">
+ 13e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28664"></a><pre class="pCode">
+ 13o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28665"></a><pre class="pCode">
+ 14e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28666"></a><pre class="pCode">
+ 14o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28667"></a><pre class="pCode">
+ 15e 00000000-00000fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28668"></a><pre class="pCode">
+ 15o 00001000-00001fff 0000  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28669"></a><pre class="pCode">
+  1e 00554000-00554fff Glbl  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28670"></a><pre class="pCode">
+  1o 00555000-00555fff Glbl 000021000-000021fff  1 1 2
+</pre>
+
+<a name="wp28671"></a><pre class="pCode">
+  0e 00aaa000-00aaafff Glbl 000020000-000020fff  1 1 2
+</pre>
+
+<a name="wp28672"></a><pre class="pCode">
+  0o 00aab000-00aabfff Glbl  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28673"></a><pre class="pCode">
+     80000000-9fffffff Glbl 000000000-001ffffff  1 1 2
+</pre>
+
+<a name="wp28674"></a><pre class="pCode">
+     a0000000-bfffffff Glbl 000000000-001ffffff  1 1 3
+</pre>
+
+<a name="wp28675"></a><pre class="pCode">
+  2e dee80000-dee80fff 0014 000022000-000022fff  1 1 2
+</pre>
+
+<a name="wp28676"></a><pre class="pCode">
+  2o dee81000-dee81fff 0014  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28677"></a><pre class="pCode">
+  3e dee80000-dee80fff 0015 000024000-000024fff  1 1 2
+</pre>
+
+<a name="wp28678"></a><pre class="pCode">
+  3o dee81000-dee81fff 0015  ------- - -------   0 0 0
+</pre>
+
+<a name="wp28679"></a><pre class="pCode">
+Virtual Address:   00aaa0a0
+</pre>
+
+<a name="wp28680"></a><pre class="pCode">
+Physical Address:  000200a0
+</pre>
+
+<a name="wp28681"></a><pre class="pCode">
+Virtual Address:   00555050
+</pre>
+
+<a name="wp28682"></a><pre class="pCode">
+Physical Address:  00021050
+</pre>
+
+<a name="wp28683"></a><pre class="pCode">
+00aaa000:    A0000120
+</pre>
+
+<a name="wp28639"></a><pre class="pCode">
+00555000:    A0000121
+</pre>
+
+
+
+
+
+</div>
+<!--BeginFooterContent-->
+<div class="BlankFooter" id="BlankFooter">&nbsp;</div>
+<div class="Footer" id="Footer">&nbsp;</div>
+<script type="text/javascript" language="JavaScript1.2">
+<!--
+   DocHandle = "mesp_user";
+   DocTitle = "Mentor Embedded Sourcery Probe User's Manual";
+   PageTitle = "mmu_dump";
+   Copyright = "2011";
+   PDFLinkTitle = "mmudump"
+   ThisTopic = "UserDefinedAccessLists";
+   CurrentFile = "moncommand36.html";
+   CurrentFileID = "56";
+   topicFooter();
+ // -->
+ </script>
+ 
+ <noscript>
+    <p class="MGCFooter">Mentor Embedded Sourcery Probe User's Manual&nbsp;2.2.3
+    <br />2011&#169;&nbsp;Mentor Graphics Corporation. All rights reserved.
+    <br /><a href='../mgc_html_help/nsmgchelp.htm' target="_blank">Browser Requirements</a></p>
+ </noscript>
+
+    </div>
+  </body>
+</html>
+
+ 

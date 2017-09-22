@@ -1,0 +1,267 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Appendix A. Sourcery CodeBench Lite Release Notes</title><link rel="stylesheet" href="cs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><meta name="description" content=" This appendix contains information about changes in this release of Sourcery CodeBench Lite for Xilinx GNU/Linux. You should read through these notes to learn about new features and bug fixes."><link rel="home" href="index.html" title="Sourcery CodeBench Lite"><link rel="up" href="index.html" title="Sourcery CodeBench Lite"><link rel="prev" href="ch06s03.html" title="6.3. Manuals for GNU Toolchain Components"><link rel="next" href="chap-license.html" title="Appendix B. Sourcery CodeBench Lite Licenses"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Sourcery CodeBench Lite Release Notes</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch06s03.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="chap-license.html">Next</a></td></tr></table><hr></div><div class="appendix" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="chap-release"></a>Appendix A. Sourcery CodeBench Lite Release Notes</h2></div><div><div class="abstract"><p class="title"><b></b></p><p>
+     This appendix contains information about changes in this
+     release of Sourcery CodeBench Lite for Xilinx GNU/Linux.  You should read
+     through these notes to learn about new features and bug fixes.
+    </p></div></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="chap-release.html#sec-release-notes">A.1. Changes in Sourcery CodeBench Lite for Xilinx GNU/Linux</a></span></dt></dl></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sec-release-notes"></a>A.1. Changes in Sourcery CodeBench Lite for Xilinx GNU/Linux</h2></div></div></div><p>
+      This section documents Sourcery CodeBench Lite changes for each released revision.
+    </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id356266"></a>A.1.1. Changes in Sourcery CodeBench Lite 2011.09-50</h3></div></div></div><p><b>Internal compiler error with NEON intrinsics. </b>
+          A compiler bug has been fixed that caused internal compiler
+          errors when using certain NEON intrinsics.
+        </p><p><b>GCC version 4.6. </b>
+          Sourcery CodeBench Lite for Xilinx GNU/Linux is now based on GCC
+          version 4.6. For more information about changes from GCC
+          version 4.5 that was included in previous releases, see
+          <code class="uri">http://gcc.gnu.org/gcc-4.6/changes.html</code>.
+        </p><p><b>ARM VFP9-S errata workaround. </b>
+	  A compiler workaround for ARM Errata Notice GENC-010704
+	  (760019: Canceled FDIV or FSQRT can be executed twice) has been
+	  implemented.
+        </p><p><b>GCC stack usage improvement. </b>
+          GCC now generates better code for stack allocation in some
+          cases when compiling with <code class="option">-fno-strict-aliasing</code>.
+        </p><p><b>Binutils version 2.21. </b>
+          Sourcery CodeBench Lite for Xilinx GNU/Linux is now based on binutils
+          version 2.21.
+        </p><p><b>Assembler crash. </b>
+          The assembler now warns when there is line information for
+	  the <code class="literal">*ABS*</code> section, rather than crash.
+	  This can occur when the <code class="code">.offset</code> directive is
+	  used incorrectly.
+        </p><p><b>Linux kernel headers update. </b>
+          Linux kernel header files have been updated to version
+          3.0.1.
+        </p><p><b>Fix for crash in GDB <code class="command">maint print arch</code>. </b>
+          A bug in the GDB command <code class="command">maint print arch</code>
+          that sometimes caused GDB to crash has been fixed.
+        </p><p><b>GDB interrupt handling bug fix. </b>
+	  A bug in GDB has been fixed that caused it to sometimes fail
+	  to interrupt lengthy single-step operations (as by a
+	  <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>C</strong></span>
+	  when using GDB from the command line).
+	</p><p><b>Fix GDB crash during connection to debug agent. </b>
+          A bug has been fixed that caused GDB to crash while connecting
+	  to any debug agent through standard IO where the debug agent
+	  had detected an early error and terminated the communication.
+        </p><p><b>Debug Sprite option defaults. </b>
+          The Sourcery CodeBench Debug Sprite now uses default option values
+	  specified in board configuration files.  Options included in
+	  the device URL override the default values.
+        </p><p><b>Changes to host operating system requirements. </b>
+          The minimum required Microsoft Windows OS needed to run
+          Sourcery CodeBench Lite is now Windows XP (SP1).
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id356814"></a>A.1.2. Changes in Sourcery CodeBench Lite 2011.07-57</h3></div></div></div><p><b>Code generation bug fix. </b>
+          A compiler bug that caused incorrect assembly code to be
+          generated for <code class="code">movt</code> instructions has been fixed.
+        </p><p><b>Packed volatile structure fix. </b>
+	  A compiler bug that resulted in incorrect code for volatile
+	  accesses to packed structure fields has been fixed.
+        </p><p><b>Map file name demangling bug fix. </b>
+	  GCC now properly passes the 
+	  <code class="option">--demangle</code> and <code class="option">--no-demangle</code>
+	  options to the linker to control map file output.  The default
+	  behavior on all hosts is now to demangle C++ names.
+        </p><p><b>Compiler crash bug fix. </b>
+	  A GCC bug has been fixed that caused internal compiler
+	  errors in some situations when generating conditional
+	  versions of floating-point operations.
+        </p><p><b>Smaller exception handling tables. </b>
+	  The compiler now marks exception handling information for template
+	  functions so that the linker can remove duplicates. This also
+	  affects non-inlined inline functions.
+        </p><p><b>LD <code class="option">--defsym</code> bug fix. </b>
+          A bug has been fixed that kept the linker from choosing
+          symbols defined with <code class="option">--defsym</code> over symbols
+          defined in archives when resolving external symbols.
+        </p><p><b>Linux kernel headers update. </b>
+          Linux kernel header files have been updated to version
+          2.6.39.
+        </p><p><b>Target naming for Xilinx. </b>
+          The target name prefix for Sourcery CodeBench Lite for Xilinx GNU/Linux
+          has changed from
+          <span>arm-zynq7000-linux-gnueabi</span>
+          
+          to arm-xilinx-linux-gnueabi.
+          This change affects the names of the included binaries
+          (such as <code class="command">arm-xilinx-linux-gnueabi-gcc</code>) and pathnames
+	  within the Sourcery CodeBench Lite distribution, but does not affect
+	  compatibility with previously-compiled binaries for this
+	  toolchain.
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id357217"></a>A.1.3. Changes in Sourcery CodeBench Lite 2011.03-69</h3></div></div></div><p><b>New Sourcery CodeBench Lite branding. </b>
+          Sourcery G++ has been renamed to Sourcery CodeBench.
+	  <span>
+	    This change affects the names of the default installation
+	    directory and installer-created shortcuts, but no
+	    internal pathnames or tool names within the installation directory
+	    have been changed.
+	  </span>
+	  
+        </p><p><b>Target naming for Xilinx Zynq-7000. </b>
+          The target name prefix for Sourcery CodeBench Lite for Xilinx GNU/Linux
+          has changed from
+          <span>arm-xilinxa9-linux-gnueabi to arm-zynq7000-linux-gnueabi.</span>
+          
+          This change affects the names of the included binaries
+          (such as <code class="command">arm-xilinx-linux-gnueabi-gcc</code>) and pathnames within
+          the Sourcery CodeBench Lite distribution, but does not affect compatibility with
+          previously-compiled binaries for this toolchain.
+        </p><p><b>Variable Length Array (VLA) alignment bug. </b>
+	  A compiler bug that resulted in incorrectly aligned variable length
+	  arrays (VLA) in leaf functions has been fixed.
+        </p><p><b>Cortex-R5 support. </b>
+          Sourcery CodeBench now includes support for ARM Cortex-R5
+          processors.  To compile for these processors,
+          use <code class="option">-mcpu=cortex-r5</code>. 
+        </p><p><b>Inline assembly and volatile fields. </b>
+	  A bug has been fixed that caused the compiler to incorrectly
+	  reject inline <code class="code">asm</code> statements referring to volatile
+	  class/struct fields with errors such as <code class="literal">error: output
+	  number 1 not directly addressable</code>.
+	</p><p><b>Interprocedural register optimization. </b>
+          The compiler has a new experimental optimization that generates
+          better code for functions that only call functions in the same
+          object.  To switch this optimization on, use
+          <code class="option">-fuse-caller-save</code>.
+        </p><p><b>Fixed-point arithmetic support. </b>
+          Experimental compiler support has been added for fixed-point
+          arithmetic on ARM, as described in the draft ISO/IEC technical
+          report TR 18037.  Specialized instructions defined in recent
+          architecture versions for performing saturating arithmetic,
+          etc. are used when available, but are not a prerequisite for
+          using the new language features.  See
+	  <a class="xref" href="sec-arm-fixed-point.html" title="3.8. Fixed-Point Arithmetic">Section 3.8, &#8220;Fixed-Point Arithmetic&#8221;</a> for further details.
+        </p><p><b>C++ constructor bug fix. </b>
+          A compiler bug has been fixed that caused incorrect code for C++
+          constructors for some class hierarchies that use virtual inheritance
+          and include empty classes.  At runtime, the incorrect constructors
+          resulted in memory corruption or other errors.
+        </p><p><b>Thumb debug information fix. </b>
+	  A compiler bug that resulted in incorrect debug information
+	  for Thumb code has been fixed.  The incorrect information
+	  prevented single stepping through some code.
+        </p><p><b>Unaligned access support. </b>
+          The compiler now generates more efficient code for accessing
+          packed data structures and for copying small blocks of
+          unaligned data when targeting architectures that permit
+          unaligned word/halfword accesses.  This feature can be
+          controlled by the <code class="option">-munaligned-access</code> and
+          <code class="option">-mno-unaligned-access</code> options, and is enabled
+          by default for ARMv6 processors and above, except for ARMv6-M.
+        </p><p><b>Improved function call profiling. </b>
+          The compiler now supports
+          the <code class="option">-finstrument-function-calls</code> option.
+          Please see the GCC documentation for more details.
+        </p><p><b>Compiler crash bug fix. </b>
+	  A GCC bug has been fixed that caused internal compiler
+	  errors when generating ARM/Thumb-2 shift operations.
+        </p><p><b>EGLIBC version 2.13. </b>
+          Sourcery CodeBench Lite for Xilinx GNU/Linux now includes EGLIBC version 2.13
+          library which is based on GNU C Library version 2.13.
+          For more information about changes, see
+          <code class="uri">http://www.eglibc.org/news#eglibc_2_13</code>.
+        </p><p><b>Fix GDB crash in debugging Thumb assembly routines. </b>
+	  A bug in GDB has been fixed that caused a crash when debugging
+	  Thumb assembly routines that switch stacks by writing the stack
+	  pointer in the function prologue.
+        </p><p><b>Improved disassembler performance in the debugger. </b>
+          GDB's disassembler has been improved to use more efficient memory
+	  access on remote targets.
+        </p><p><b>Xilinx Platform Cable USB support. </b>
+          The Sourcery CodeBench Debug Sprite now supports Xilinx ZYNQ-7000
+	  boards via the Platform Cable USB interface.
+	  Refer to <a class="xref" href="debug-sprite-xilinx-url.html" title="5.4. Xilinx Platform Cable USB Interface">Section 5.4, &#8220;Xilinx Platform Cable USB Interface&#8221;</a>
+	  for more information.
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id357695"></a>A.1.4. Changes in Sourcery G++ Lite 2011.03-26</h3></div></div></div><p><b>GCC fixes for <code class="option">-fstrict-volatile-bitfields</code>. </b>
+	  GCC now honors <code class="option">-fstrict-volatile-bitfields</code>
+	  when a bitfield is not declared volatile initially, but an
+	  object including bit fields is cast to volatile.
+	  Also, a bug was fixed that caused incorrect code to be generated
+	  for some stores to volatile bit fields when
+	  <code class="option">-fstrict-volatile-bitfields</code> is enabled.
+        </p><p><b>Compiler optimization improvements. </b>
+          The compiler has been enhanced with a number of optimization
+	  improvements, including:
+	  </p><div class="itemizedlist"><ul type="disc"><li>
+	      Smaller and faster code for compound conditionals.
+	    </li><li>
+	      Removal of superfluous sign and zero extensions.
+	    </li><li>
+	      Improved code for multiply-and-accumulate operations on ARM.
+	    </li></ul></div><p>
+        </p><p><b>Internal compiler error with NEON intrinsics. </b>
+          A compiler bug has been fixed that caused internal compiler
+          errors when using certain NEON intrinsics.
+        </p><p><b>GCC version 4.5.2. </b>
+          Sourcery G++ Lite for Xilinx GNU/Linux is now based on GCC version 4.5.2.
+        </p><p><b>GCC code generation bug for casts to <code class="code">volatile</code>
+          types. </b>
+          A compiler bug has been fixed that sometimes caused incorrect code
+          for references to pointers to types with <code class="code">volatile</code> casts.
+        </p><p><b>Incorrect optimization fix. </b>
+          An optimizer bug that in rare cases caused incorrect code to
+	  be generated for complex AND and OR expressions containing
+	  redundant subexpressions has been fixed.
+        </p><p><b>Incorrect C++ warning fixed. </b>
+          A bug in GCC has been fixed that caused spurious warnings
+	  about lambda expressions in C++ code that does not use them.
+        </p><p><b>GCC fixes for NEON in big-endian mode. </b>
+          Several compiler bugs have been fixed that could lead to
+          incorrect code when using NEON in big-endian mode. The problems
+          only manifested when using the auto-vectorizer (enabled by
+          default at the <code class="option">-O3</code> optimization level) with
+          the <code class="option">-mvectorize-with-neon-quad</code> option.
+        </p><p><b>GCC fix for thread-local storage. </b>
+          A compiler optimization bug has been fixed that affected
+	  accesses to thread-local storage.  The bug resulted in
+	  assembler errors of the form <code class="literal">symbol `.LPIC2' is
+	  already defined</code>.
+        </p><p><b>Incorrect code for built-in comparison functions. </b>
+          A bug has been fixed that sometimes caused GCC's built-in
+	  comparison functions,
+	  such as <code class="function">__builtin_isgreaterequal</code>, to
+	  incorrectly raise exceptions when invoked on unordered
+	  floating-point arguments.
+        </p><p><b>C++ exception handling. </b>
+          A defect in the implementation of the EH-ABI specification
+	  has been fixed.  The defect affected the catching of pointer
+	  types in code generated by the ARM <span class="trademark">RealView</span>® compiler but using
+	  the Sourcery G++ runtime libraries.  The fix also retains
+	  backward compatibility with existing GCC-compiled code.
+        </p><p><b>GCC bug where accesses to volatile structure fields are optimized away. </b>
+          A bug has been fixed where accesses to volatile fields of a structure
+	  were sometimes incorrectly optimized away if the structure instance
+	  was defined as non-volatile.
+        </p><p><b>Internal compiler error fixes. </b>
+          Two bugs have been fixed that caused compiler crashes in rare cases.
+          The first bug involved code with multiple comparison operations,
+          and the second one involved <code class="type">char</code> to <code class="type">int</code>
+          conversion. 
+        </p><p><b>Thumb-2 assembler validation fix. </b>
+	  The assembler now correctly rejects Thumb-2
+	  <code class="literal">ADD</code>, <code class="literal">ADDS</code>,
+	  <code class="literal">SUB</code>, and <code class="literal">SUBS</code>
+	  instructions that have an invalid shift operand.
+	  Previously, invalid shift values were accepted and
+	  generated unpredictable instructions.
+        </p><p><b>Objdump fix for multiple input files. </b>
+          The Objdump utility did not produce correct disassembly
+	  when processing multiple input files.  This has been fixed.
+        </p><p><b><code class="function">popen</code> bug fix. </b>
+          GLIBC's <code class="function">popen</code> function no longer causes a
+          deadlock situation when invoked from more than one thread.
+        </p><p><b><code class="function">strstr</code> and
+	  <code class="function">strcasestr</code> bug fixes. </b>
+          A problem has been fixed that caused GLIBC's
+	  <code class="function">strstr</code> and <code class="function">strcasestr</code>
+	  functions to return wrong results on certain inputs.
+        </p><p><b>Linux kernel headers update. </b>
+          Linux kernel header files have been updated to version
+          2.6.38.
+        </p><p><b>Improved GDB startup times when debugging remote 
+	  targets
+	. </b>
+          GDB has been enhanced to reduce the startup times when working
+	  with remote targets via GDBServer, especially when the target uses
+	  a large number of shared libraries.
+        </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id358558"></a>A.1.5. Changes in Sourcery G++ Lite 2010.09-62</h3></div></div></div><p><b>Initial release. </b>
+          This is the initial release for Xilinx GNU/Linux.
+        </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch06s03.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="chap-license.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">6.3. Manuals for GNU Toolchain Components </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Appendix B. Sourcery CodeBench Lite Licenses</td></tr></table></div></body></html>

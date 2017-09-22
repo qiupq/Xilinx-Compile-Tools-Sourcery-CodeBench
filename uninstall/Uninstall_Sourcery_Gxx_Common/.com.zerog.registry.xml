@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registry install_date="2014-03-30 19:30:29" version="1.1" last_modified="2014-03-30 19:30:31">
+	<products>
+		<product name="Sourcery G++ Common" id="d4bc5c81-77c7-4703-8f94-5e063b518f3b" version="1.0.0.257747" copyright="2010" info_url="http://www.codesourcery.com" support_url="http://www.codesourcery.com/support/" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux" last_modified="2014-03-30 19:30:31">
+		<![CDATA[Sourcery G++ Common]]>
+			<vendor name="CodeSourcery" id="7f1ebb3c-1ec7-11b2-8037-c0d9e9f9d7a6" home_page="http://www.codesourcery.com" email="Sourcery_Sales@mentor.com"/>
+			<feature short_name="Sourcery G++ Common" name="Sourcery G++ Common" last_modified="2014-03-30 19:30:31">
+			<![CDATA[This installs the Sourcery G++ Common feature.]]>
+				<component ref_id="735297d0-0269-4636-a3b6-c97cb0380fc9" version="1.0.0.257747" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_Common/Uninstall_Sourcery_Gxx_Common"/>
+				<component ref_id="2953cb23-86ff-42a1-92be-8c002a0ad7fc" version="1.0.0.257747" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features/Common.key"/>
+			</feature>
+		</product>
+	</products>
+	<components>
+		<component id="735297d0-0269-4636-a3b6-c97cb0380fc9" version="1.0.0.257747" name="InstallAnywhere Uninstall Component" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_Common/Uninstall_Sourcery_Gxx_Common" vendor="CodeSourcery">
+			<resource keyfile="false" name="Sourcery_Gxx_Common Installer.log" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Sourcery_Gxx_Common Installer.log" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="uninstall" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="Uninstall_Sourcery_Gxx_Common" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_Common" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="uninstaller.jar" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_Common/uninstaller.jar" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="true" name="Uninstall_Sourcery_Gxx_Common" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_Common/Uninstall_Sourcery_Gxx_Common" type="executable" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="Uninstall_Sourcery_Gxx_Common.lax" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_Common/Uninstall_Sourcery_Gxx_Common.lax" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name=".com.zerog.registry.xml" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_Common/.com.zerog.registry.xml" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="2953cb23-86ff-42a1-92be-8c002a0ad7fc" version="1.0.0.257747" name="Sourcery G++ Common" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features/Common.key">
+			<resource keyfile="false" name="uninstall" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="features" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="true" name="Common.key" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features/Common.key" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="remove-links-iamm-common_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/remove-links-iamm-common_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="create-links-iamm-common_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/create-links-iamm-common_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+		</component>
+	</components>
+</registry>

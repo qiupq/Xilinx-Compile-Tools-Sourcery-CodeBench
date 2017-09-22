@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registry install_date="2014-03-30 19:30:36" version="1.1" last_modified="2014-03-30 19:30:39">
+	<products>
+		<product name="Sourcery G++ JVM" id="148fcc56-69ab-46cd-8078-3815f7a49cac" version="1.0.0.2" copyright="" info_url="http://www.codesourcery.com" support_url="http://www.codesourcery.com/support/" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux" last_modified="2014-03-30 19:30:39">
+		<![CDATA[Sourcery G++ JVM]]>
+			<vendor name="CodeSourcery" id="7f1ebb3c-1ec7-11b2-8037-c0d9e9f9d7a6" home_page="http://www.codesourcery.com" email="Sourcery_Sales@mentor.com"/>
+			<feature short_name="Sourcery G++ JVM" name="Sourcery G++ JVM" last_modified="2014-03-30 19:30:39">
+			<![CDATA[This installs the Sourcery G++ JVM feature.]]>
+				<component ref_id="0cf79ee6-9237-4fb5-ba5a-8664a3b8463e" version="1.0.0.2" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_JVM/Uninstall_Sourcery_Gxx_JVM"/>
+				<component ref_id="7db8e13c-c3a8-4e5b-bcd8-4e94aed5ffad" version="1.0.0.2" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/jre"/>
+				<component ref_id="adbdf545-5ecf-4cf0-a607-0cd328b19ace" version="1.0.0.2" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features/JVM.key"/>
+			</feature>
+		</product>
+	</products>
+	<components>
+		<component id="adbdf545-5ecf-4cf0-a607-0cd328b19ace" version="1.0.0.2" name="Sourcery G++ JVM" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features/JVM.key">
+			<resource keyfile="false" name="uninstall" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="features" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="true" name="JVM.key" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features/JVM.key" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="create-links-iamm-jvm_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/create-links-iamm-jvm_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="remove-links-iamm-jvm_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/remove-links-iamm-jvm_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="0cf79ee6-9237-4fb5-ba5a-8664a3b8463e" version="1.0.0.2" name="InstallAnywhere Uninstall Component" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_JVM/Uninstall_Sourcery_Gxx_JVM" vendor="CodeSourcery">
+			<resource keyfile="false" name="Sourcery_Gxx_JVM Installer.log" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Sourcery_Gxx_JVM Installer.log" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="jre" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/jre" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="uninstall" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="Uninstall_Sourcery_Gxx_JVM" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_JVM" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="uninstaller.jar" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_JVM/uninstaller.jar" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="true" name="Uninstall_Sourcery_Gxx_JVM" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_JVM/Uninstall_Sourcery_Gxx_JVM" type="executable" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="Uninstall_Sourcery_Gxx_JVM.lax" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_JVM/Uninstall_Sourcery_Gxx_JVM.lax" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name=".com.zerog.registry.xml" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_JVM/.com.zerog.registry.xml" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="7db8e13c-c3a8-4e5b-bcd8-4e94aed5ffad" version="1.0.0.2" name="InstallAnywhere VM Component" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/jre" vendor="CodeSourcery">
+			<resource keyfile="true" name="jre" location="/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/jre" type="post_processed_dir" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[true]]>
+			</resource>
+		</component>
+	</components>
+</registry>

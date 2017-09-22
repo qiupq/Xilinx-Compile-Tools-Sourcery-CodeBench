@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <noscript>
+       <link rel="StyleSheet" href="../MGC/styles/body.css" type="text/css" />
+       <link rel="StyleSheet" href="../MGC/styles/catalog.css" type="text/css" />
+       <link rel="StyleSheet" href="../MGC/styles/document.css" type="text/css" />
+    </noscript>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v3.1.104" />
+    <meta name="LASTUPDATED" content="Mon Oct 31 12:43:32 2011" />
+    <meta name="mgc_html_doctitle" content="Mentor Embedded Sourcery Probe User's Manual" />
+    <title>mmu_xlate</title>
+<!-- Search Engine keywords -->
+    <meta name="attributes" content=" product.version.2.2.3,doc.type.documentation.user,product.id.P11526 "/>
+<!-- JavaScript Files -->
+<script type="text/javascript" language="JavaScript1.2" src="../MGC/js/page.js"></script>
+<script type="text/javascript" language="JavaScript1.2">
+        if(DetectChromeForBasic()){
+           writeNoScriptStyles();
+        }
+
+     </script>
+   <script type="text/javascript" language="JavaScript1.2">
+     // Set reference to top level help frame
+      //
+      if(!DetectChromeForBasic()){
+        javascriptTopicRedirect();
+      }
+     </script>
+  </head>
+
+<body class="body" id="DocBody">
+<div id="BodyPopup" class="BodyPopup"></div>
+<div class="HideBody" id="HideBody">&nbsp;</div>
+<div id="bodycontent" class="BodyContent">
+
+
+
+
+
+  <script type="text/javascript" language="JavaScript1.2">
+  <!--
+      var BC = new Array("MON Command Language ","moncommand01","MON Command Details","moncommand04","mmu_xlate","moncommand37","57");
+  // -->
+  </script>
+
+   <noscript><iframe framespacing="0" marginheight="2px" frameborder="no" scrolling="no" src="../MGC/html/noscript_header.htm" width="100%" height="100px;"></iframe>
+   </noscript>
+
+<script type="text/javascript" language="JavaScript1.2">
+if(DetectChromeForBasic()){
+       if(!(top.inEclipse)){  
+          writeBasicHeader();
+      }
+}
+</script>
+<div id="BodyContent">
+
+<a name="wp28568"></a><h1 class="pzCmdFunc FontLevel1" id="MGC28568">
+
+<a name="CRefID25940"></a>mmu_xlate
+</h1>
+
+
+
+<a name="wp29180"></a><p class="pzMiscInfo">
+
+Availability: ALL
+</p>
+
+<table class="notes">
+  <tr class="NotesUpperRuleBlack">
+    <td class="NotesUpperRule" colspan='2'><span class="cNotesBlack">Note</span></td>
+  </tr>
+  <tr class="NotesNote">
+    <td class="NoteNote"></td>
+    <td valign="top">
+            
+<a name="wp28822"></a><p class="pnoteNote">
+
+        	This is implemented as a script file. It is not a built-in MON command. See <a href="moncommand64.html"  onclick='oT("CRF","moncommand64.html");return false;'>Command Script Files</a>.
+        </p>
+          </td>
+  </tr>
+  <tr class="NotesBottomRuleBlack">
+    <td class="NotesBottomRule" colspan='2'>&nbsp;</td>
+    </tr>
+ </table>
+<a name="wp28696"></a><p class="pzHeading">
+
+Syntax
+</p>
+
+<a name="wp28697"></a><p class="pzUsage">
+
+mmu_xlate <span class=" cItalic">address</span>
+</p>
+
+<a name="wp28705"></a><p class="pzHeading">
+
+Description
+</p>
+
+<a name="wp27316"></a><p class="pzBody">
+
+The mmu_xlate script translates a virtual address into the corresponding physical address and displays the result. For ARM processors, the translation is based on the mappings to the memory resident MMU map to which the TBASE register points. For MIPS processors, the translation is based on mappings programmed in the TLBs plus the hard-mapped kernel segments.
+</p>
+
+
+<a name="wp27326"></a><p class="pzHeading">
+
+Example
+</p>
+
+<a name="wp27327"></a><p class="pBody">
+
+<span class=" cBold">For ARM:</span>
+</p>
+
+<a name="wp28731"></a><pre class="pCode">
+mmu_xlate @r0   /* translate address in .r0 */
+</pre>
+
+<a name="wp28732"></a><pre class="pCode">
+
+</pre>
+
+<a name="wp28733"></a><pre class="pCode">
+Virtual  Address      :  01000000
+</pre>
+
+<a name="wp28734"></a><pre class="pCode">
+Physical Address      :  00000000
+</pre>
+
+<a name="wp28724"></a><pre class="pCode">
+
+</pre>
+
+<a name="wp28725"></a><p class="pBody">
+
+<span class=" cBold">For MIPS:</span>
+</p>
+
+<a name="wp28741"></a><pre class="pCode">
+mmu_xlate @t0   /* translate address in .t0 */
+</pre>
+
+<a name="wp28742"></a><pre class="pCode">
+
+</pre>
+
+<a name="wp28743"></a><pre class="pCode">
+Virtual Address:   00555050
+</pre>
+
+<a name="wp28744"></a><pre class="pCode">
+Physical Address:  00020050
+</pre>
+
+
+
+
+
+</div>
+<!--BeginFooterContent-->
+<div class="BlankFooter" id="BlankFooter">&nbsp;</div>
+<div class="Footer" id="Footer">&nbsp;</div>
+<script type="text/javascript" language="JavaScript1.2">
+<!--
+   DocHandle = "mesp_user";
+   DocTitle = "Mentor Embedded Sourcery Probe User's Manual";
+   PageTitle = "mmu_xlate";
+   Copyright = "2011";
+   PDFLinkTitle = "mmuxlate"
+   ThisTopic = "UserDefinedAccessLists";
+   CurrentFile = "moncommand37.html";
+   CurrentFileID = "57";
+   topicFooter();
+ // -->
+ </script>
+ 
+ <noscript>
+    <p class="MGCFooter">Mentor Embedded Sourcery Probe User's Manual&nbsp;2.2.3
+    <br />2011&#169;&nbsp;Mentor Graphics Corporation. All rights reserved.
+    <br /><a href='../mgc_html_help/nsmgchelp.htm' target="_blank">Browser Requirements</a></p>
+ </noscript>
+
+    </div>
+  </body>
+</html>
+
+ 

@@ -1,0 +1,153 @@
+__________________________________________________________________________
+
+Sun Mar 30 19:30:32 CST 2014
+
+Free Memory: 15889 kB
+Total Memory: 28224 kB
+
+4 Command Line Args:
+0:  -f
+1:  /tmp/388200.tmp/mergeModuleLax11.properties
+2:  -l
+3:  en
+
+java.class.path:
+    /tmp/388200.tmp/SubInstaller1.zip
+    /tmp/install.dir.27107/InstallerData
+    /tmp/install.dir.27107/InstallerData/installer.zip
+
+ZGUtil.CLASS_PATH:
+    /tmp/388200.tmp/SubInstaller1.zip
+    /tmp/install.dir.27107/InstallerData
+    /tmp/install.dir.27107/InstallerData/installer.zip
+
+sun.boot.class.path:
+    /tmp/install.dir.27107/Linux/resource/jre/lib/resources.jar
+    /tmp/install.dir.27107/Linux/resource/jre/lib/rt.jar
+    /tmp/install.dir.27107/Linux/resource/jre/lib/sunrsasign.jar
+    /tmp/install.dir.27107/Linux/resource/jre/lib/jsse.jar
+    /tmp/install.dir.27107/Linux/resource/jre/lib/jce.jar
+    /tmp/install.dir.27107/Linux/resource/jre/lib/charsets.jar
+    /tmp/install.dir.27107/Linux/resource/jre/classes
+
+java.ext.dirs:
+    /tmp/install.dir.27107/Linux/resource/jre/lib/ext
+    /usr/java/packages/lib/ext
+
+java.version                  == 1.6.0_20 (Java 1)
+java.vm.name                  == Java HotSpot(TM) Server VM
+java.vm.vendor                == Sun Microsystems Inc.
+java.vm.version               == 16.3-b01
+java.vm.specification.name    == Java Virtual Machine Specification
+java.vm.specification.vendor  == Sun Microsystems Inc.
+java.vm.specification.version == 1.0
+java.specification.name       == Java Platform API Specification
+java.specification.vendor     == Sun Microsystems Inc.
+java.specification.version    == 1.6
+java.vendor                   == Sun Microsystems Inc.
+java.vendor.url               == http://java.sun.com/
+java.class.version            == 50.0
+java.compiler                 == null
+java.home                     == /tmp/install.dir.27107/Linux/resource/jre
+java.io.tmpdir                == /tmp
+os.name                       == Linux
+os.arch                       == i386
+os.version                    == 3.2.0-23-generic
+path.separator                == :
+file.separator                == /
+file.encoding                 == UTF-8
+user.name                     == root
+user.home                     == /root
+user.dir                      == /tmp/388200.tmp
+user.language                 == en
+user.region                   == null
+__________________________________________________________________________
+
+Install Begin: Sun Mar 30 19:30:26 CST 2014
+Install End: Sun Mar 30 19:30:32 CST 2014
+
+Installed by InstallAnywhere 11.0 Enterprise Build 3890
+
+
+User Interactions
+-----------------
+
+
+#Install
+#-------
+-fileOverwrite_/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_Common/Uninstall_Sourcery_Gxx_Common.lax=Yes
+-fileOverwrite_/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features/Common.key=Yes
+-fileOverwrite_/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/remove-links-iamm-common_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi=Yes
+-fileOverwrite_/usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/create-links-iamm-common_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi=Yes
+
+Summary
+-------
+
+Installation: Successful.
+
+18 Successes
+0 Warnings
+0 NonFatalErrors
+0 FatalErrors
+
+Action Notes:
+
+None
+
+Install Log Detail:
+
+Install Action:           InstallAnywhere Variable
+                          Status: SUCCESSFUL
+
+Install Action:           InstallAnywhere Variable
+                          Status: SUCCESSFUL
+
+Install Action:           InstallAnywhere Variable
+                          Status: SUCCESSFUL
+
+Check Disk Space:         /usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Required Disk Space: 938,445; Free Disk Space: 182,409,560,064
+
+Install Directory:        /usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Directory already existed
+
+Install Directory:        /usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Directory already existed
+
+Install Directory:        /usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_Common/
+                          Status: SUCCESSFUL
+
+Install Uninstaller:      Sourcery G++ Common (Install All Uninstaller Components)
+                          Status: SUCCESSFUL
+
+
+Install File:             /usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/Uninstall_Sourcery_Gxx_Common/Uninstall_Sourcery_Gxx_Common.lax
+                          Status: SUCCESSFUL
+
+Install Uninstaller:      Sourcery G++ Common (Install All Uninstaller Components)
+                          Status: SUCCESSFUL
+
+Install Directory:        /usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Directory already existed
+
+Install Directory:        /usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features/
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Directory already existed
+
+Install File:             /usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/features/Common.key
+                          Status: SUCCESSFUL
+
+Install File:             /usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/remove-links-iamm-common_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi
+                          Status: SUCCESSFUL
+
+Install File:             /usr/local/CodeSourcery/Sourcery_CodeBench_Lite_for_Xilinx_GNU_Linux/uninstall/create-links-iamm-common_files-xilinx-2011.09-50-arm-xilinx-linux-gnueabi
+                          Status: SUCCESSFUL
+
+
+Execute Target File:      Creating links...
+                          Status: SUCCESSFUL
+
